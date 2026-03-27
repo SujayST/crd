@@ -1,0 +1,27 @@
+services:
+
+  chromadb:
+    image: ghcr.io/chroma-core/chroma:latest
+    container_name: crd-chroma
+    platform: linux/amd64
+    ports:
+      - "8001:8000"
+    volumes:
+      - chroma_data:/chroma
+    restart: always 
+
+  chroma-ui:
+    build: .
+    container_name: crd-chroma-ui
+    platform: linux/amd64
+    ports:
+      - "8501:8501"
+    depends_on:
+      - chromadb
+    environment:
+      - CHROMA_HOST=chromadb
+      - CHROMA_PORT=8000
+    restart: always
+
+volumes:
+  chroma_data:

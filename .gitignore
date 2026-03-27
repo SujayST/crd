@@ -1,0 +1,38 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env
+
+# Django/DRF artifacts
+db.sqlite3
+*.log
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+
+# Python packaging
+*.egg-info/
+build/
+dist/
+
+# Pip/poetry cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Application outputs
+crd_iteration_*.json
+generated_questions_iteration_*.json
+iteration_summary_generated.json
+
+# Local uploads/temp
+*.tmp
+*.swp
+
+# Node/yarn (if frontends added later)
+node_modules/
